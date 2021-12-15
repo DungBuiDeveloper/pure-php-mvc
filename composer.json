@@ -1,0 +1,23 @@
+{
+    "name": "nals/mvc",
+    "authors": [
+        {
+            "name": "DungBT",
+            "email": "dungbui.dev@gmail.com"
+        }
+    ],
+	"autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+		"files": [
+            "config/constants.php", 
+            "config/database.php", 
+            "config/utilities.php"
+        ],
+        "classmap": ["src/","base/"]
+	},
+    "require": {
+        "squizlabs/php_codesniffer": "*"
+    }
+}
