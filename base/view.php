@@ -10,15 +10,15 @@ class View
     public function __construct($template)
     {
         try {
-            $file = APP_ROOT . '/src/views/' . $template . '.php';
+            $file = '../src/views/' . $template . '.php';
 
             if (file_exists($file)) {
                 $this->render = $file;
             } else {
                 errorLog('Template ' . $template . ' not found!');
             }
-        } catch (\Throwable $th) {
-            errorLog($e->errorMessage());
+        } catch (\Throwable $e) {
+            errorLog($e->getMessage());
         }
     }
 

@@ -8,9 +8,4 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/"> Home </a></li>
-            <li><a href="/test">Test database</a></li>
-        </ul>
-    </nav>
+    

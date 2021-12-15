@@ -11,13 +11,13 @@
             "App\\": "src/"
         },
 		"files": [
-            "config/constants.php", 
-            "config/database.php", 
-            "config/utilities.php"
+            "config/app.php", 
+            "helper.php"
         ],
         "classmap": ["src/","base/"]
 	},
     "require": {
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "vlucas/phpdotenv": "^5.4"
     }
 }
