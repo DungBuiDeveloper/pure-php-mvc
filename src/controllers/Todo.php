@@ -9,12 +9,19 @@ use \App\Requests\TodoRequest;
 class Todo extends Controller
 {
     public $todoModel;
+    public $todoRequest;
 
     public function __construct()
     {
         $this->todoModel = new TodoModel;
+        $this->todoRequest = new TodoRequest;
     }
 
+    /**
+     * getList function
+     *
+     * @return Array List Todo
+     */
     public function getList()
     {
         $view = new View('json');
@@ -22,14 +29,13 @@ class Todo extends Controller
         foreach ($data as $key => $value) {
             switch ($value['status']) {
                 case PLANNING:
-                    $color = '#8d8d3f';
+                    $color = PLANNING_COLOR;
                     break;
                 case DOING:
-                    $color = '#8d3f75';
+                    $color = DOING_COLOR;
                     break;
-                
                 default:
-                    $color = '#408d3f';
+                    $color = COMPLETE_COLOR;
                     break;
             }
             $data[$key]['backgroundColor'] = $color;
@@ -38,9 +44,16 @@ class Todo extends Controller
         return $view->assign('data', json_encode($data));
     }
 
+    /**
+     * add function
+     *
+     * ToDo Store Controller
+     * 
+     * @return void
+     */
     public function add()
     {
-        $request = new TodoRequest();
+        $request = $this->todoRequest;
         $request->addValidate($_POST);
         $view = new View('json');
         if ($request->isSuccess()) {
@@ -54,9 +67,15 @@ class Todo extends Controller
         }
     }
 
+    /**
+     * delete function
+     *
+     * Remove Todo
+     * @return void
+     */
     public function delete()
     {
-        $request = new TodoRequest();
+        $request = $this->todoRequest;
         $request->deleteValidate($_POST);
         $view = new View('json');
         if ($request->isSuccess()) {
@@ -71,9 +90,15 @@ class Todo extends Controller
         }
     }
 
+    /**
+     * edit function
+     *
+     * Edit Todo
+     * @return void
+     */
     public function edit()
     {
-        $request = new TodoRequest();
+        $request = $this->todoRequest;
         $request->editValidate($_POST);
         $view = new View('json');
         if ($request->isSuccess()) {

@@ -16,3 +16,8 @@ define('DB_NAME', $_ENV['DB_NAME']);
 define('PLANNING', $_ENV['PLANNING']);
 define('DOING', $_ENV['DOING']);
 define('COMPLETE', $_ENV['COMPLETE']);
+
+define('PLANNING_COLOR', $_ENV['PLANNING_COLOR']);
+define('DOING_COLOR', $_ENV['DOING_COLOR']);
+define('COMPLETE_COLOR', $_ENV['COMPLETE_COLOR']);
+
