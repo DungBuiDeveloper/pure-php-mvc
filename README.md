@@ -48,12 +48,12 @@ server {
 
 ### ENV
 
-APP_URL=your_server_name (required)
-APP_NAME=
-DB_HOST= (required)
-DB_USER= (required)
-DB_PASS= (required)
-DB_NAME= (required)
-PLANNING=1
-DOING=2
-COMPLETE=3
+- APP_URL=your_server_name (required)
+- APP_NAME=
+- DB_HOST= (required)
+- DB_USER= (required)
+- DB_PASS= (required)
+- DB_NAME= (required)
+- PLANNING=1
+- DOING=2
+- COMPLETE=3
