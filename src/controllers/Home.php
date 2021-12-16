@@ -6,7 +6,8 @@ use \BaseClass\View;
 
 class Home extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return new View('home/index');
     }
 }
