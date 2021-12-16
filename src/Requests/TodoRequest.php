@@ -9,6 +9,8 @@ class TodoRequest extends Validation
     public function addValidate($data)
     {
         $this->name('Event Title')->value($data['title'])->required();
+        $this->name('Start Event')->value($data['start'])->required();
+        $this->name('End Event')->value($data['end'])->required();
         if ($this->isSuccess()) {
             return true;
         } else {

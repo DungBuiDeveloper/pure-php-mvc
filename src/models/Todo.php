@@ -7,7 +7,16 @@ class Todo extends Model
 {
     public function getList()
     {
-        $sql = "SELECT id,name as title,start_task as start,end_task as end, status FROM todos";
+        $startDate = $_GET['start'];
+        $endDate = $_GET['end'];
+        $sql = "SELECT 
+                    id,
+                    name as title,
+                    start_task as start,
+                    end_task as end, 
+                    status 
+                FROM todos
+                WHERE DATE(start_task) >= '$startDate' AND DATE(start_task) <= '$endDate'";
         $this->query($sql);
         return $this->resultSet();
     }
