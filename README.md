@@ -1,5 +1,11 @@
 # Project MVC PHP
 
+### Preview
+![uml](./preview/shot-1.png?raw=true "shot-1")
+![uml](./preview/shot-2.png?raw=true "shot-2")
+![uml](./preview/shot-3.png?raw=true "shot-3")
+![uml](./preview/shot-4.png?raw=true "shot-4")
+
 ## Check And Fix PRS-2
 
 ```
@@ -57,3 +63,4 @@ DB_NAME= (required)
 PLANNING=1
 DOING=2
 COMPLETE=3
+
