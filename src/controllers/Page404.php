@@ -4,11 +4,10 @@ namespace App\Controllers;
 use \BaseClass\Controller;
 use \BaseClass\View;
 
-class Index extends Controller
+class Page404 extends Controller
 {
     public function index()
     {
-        $view = new view('home/index');
-        $view->assign('s', 'variable home');
+        return new View('page404');
     }
 }
