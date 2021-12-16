@@ -25,8 +25,14 @@ class Bootstrap
     public function initRequest()
     {
         try {
-            $init = ['controller' => new $this->controller() , 'action' => $this->action];
-            return $init;
+			if(class_exists($this->controller)){
+				$init = ['controller' => new $this->controller() , 'action' => $this->action];
+            	return $init;
+			} else {
+				header('Location: Page404');
+				die();
+			}
+            
         } catch (\Throwable $e) {
             errorLog($e);
         }

@@ -4,9 +4,9 @@ namespace App\Controllers;
 use \BaseClass\Controller;
 use \BaseClass\View;
 
-class Home extends Controller
+class Page404 extends Controller
 {
     public function index() {
-        return new View('home/index');
+        return new View('page404');
     }
 }

@@ -1,0 +1,12 @@
+.planning {
+    background-color: #8d8d3f !important;
+    color:#fff;
+}
+.doing {
+    background-color: #8d3f75 !important;
+    color:#fff;
+}
+.complete {
+    background-color: #408d3f !important;
+    color:#fff;
+}
