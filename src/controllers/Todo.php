@@ -78,6 +78,7 @@ class Todo extends Controller
         $request = $this->todoRequest;
         $request->deleteValidate($_POST);
         $view = new View('json');
+   
         if ($request->isSuccess()) {
             try {
                 $this->todoModel->deleteTodo($_POST);

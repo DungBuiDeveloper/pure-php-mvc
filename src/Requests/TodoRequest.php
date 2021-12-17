@@ -8,9 +8,9 @@ class TodoRequest extends Validation
 
     public function addValidate($data)
     {
-        $this->name('Event Title')->value($data['title'])->required();
-        $this->name('Start Event')->value($data['start'])->required();
-        $this->name('End Event')->value($data['end'])->required();
+        $this->name('Event Title')->value($data['title']?? null)->required();
+        $this->name('Start Event')->value($data['start'] ?? null)->required();
+        $this->name('End Event')->value($data['end'] ?? null)->required();
         if ($this->isSuccess()) {
             return true;
         } else {
@@ -20,7 +20,7 @@ class TodoRequest extends Validation
 
     public function deleteValidate($data)
     {
-        $this->name('Event')->value($data['id'])->required();
+        $this->name('Event')->value($data['id'])->pattern('int')->required();
         if ($this->isSuccess()) {
             return true;
         } else {
