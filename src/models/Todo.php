@@ -42,7 +42,6 @@ class Todo extends Model
 
     public function editTodo($data)
     {
-
         $this->query('UPDATE todos SET name = :title, status = :status,end_task =:end_task , start_task=:start_task WHERE id = :id');
         $this->bind(':title', $data['title']);
         $this->bind(':status', $data['status']);

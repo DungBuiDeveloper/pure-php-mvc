@@ -50,7 +50,7 @@ server {
 
 ### Database
 
-- todos.sql on root folder
+- todos.sql in root folder
 
 ### ENV
 
