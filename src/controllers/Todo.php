@@ -22,7 +22,7 @@ class Todo extends Controller
      *
      * @return Array List Todo
      */
-    public function getList()
+    public function index()
     {
         $view = new View('json');
         $data = $this->todoModel->getList();

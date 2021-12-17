@@ -41,7 +41,7 @@ $(function () {
         },
         weekNumbers: true,
         eventLimit: true, // allow "more" link when too many events
-        events: `${baseUrl}todo/getList`,
+        events: `${baseUrl}todo`,
         editable: true,
         selectable: true,
         droppable: true, 
@@ -93,7 +93,7 @@ $(function () {
                 e.stopPropagation();
                 var settings = {
                     "url": `${baseUrl}todo/delete`,
-                    "method": "POST",
+                    "method": "DELETE",
                     "timeout": 0,
                     "headers": {
                         "Content-Type": "application/x-www-form-urlencoded"
