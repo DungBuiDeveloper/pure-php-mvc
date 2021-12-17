@@ -63,4 +63,5 @@ server {
 - PLANNING=1
 - DOING=2
 - COMPLETE=3
+- IP_APP For local unit test and fix refuse connection
 

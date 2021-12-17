@@ -7,8 +7,8 @@ class Todo extends Model
 {
     public function getList()
     {
-        $startDate = $_GET['start'];
-        $endDate = $_GET['end'];
+        $startDate = $_GET['start'] ?? null;
+        $endDate = $_GET['end'] ?? date('Y-m-d H:i:s');
         $sql = "SELECT 
                     id,
                     name as title,
