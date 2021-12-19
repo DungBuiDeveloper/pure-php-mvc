@@ -5,6 +5,7 @@ use \BaseClass\Controller;
 use \BaseClass\View;
 use \App\Models\Todo as TodoModel;
 use \App\Requests\TodoRequest;
+use \App\Services\StatusTodo;
 
 class Todo extends Controller
 {
@@ -26,22 +27,7 @@ class Todo extends Controller
     {
         $view = new View('json');
         $data = $this->todoModel->getList();
-        foreach ($data as $key => $value) {
-            switch ($value['status']) {
-                case PLANNING:
-                    $color = PLANNING_COLOR;
-                    break;
-                case DOING:
-                    $color = DOING_COLOR;
-                    break;
-                default:
-                    $color = COMPLETE_COLOR;
-                    break;
-            }
-            $data[$key]['backgroundColor'] = $color;
-        }
-        
-        return $view->assign('data', json_encode($data));
+        return $view->assign('data', json_encode(StatusTodo::formatStatusToBg($data)));
     }
 
     /**
