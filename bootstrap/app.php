@@ -29,7 +29,7 @@ class Bootstrap
 				$init = ['controller' => new $this->controller() , 'action' => $this->action];
             	return $init;
 			} else {
-				header('Location: Page404');
+				header('Location: /Page404');
 				die();
 			}
             
