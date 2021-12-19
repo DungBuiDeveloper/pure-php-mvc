@@ -12,8 +12,14 @@
 ./vendor/bin/phpcs -np src
 
 ./vendor/bin/phpcbf -np src
+```
+
+## UnitTest
 
 ```
+cd your_server_dir && ./vendor/bin/phpunit
+```
+
 ## Install
 
 ### Nginx setting
