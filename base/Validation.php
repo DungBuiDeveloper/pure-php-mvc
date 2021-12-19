@@ -87,12 +87,12 @@
         {
             if ($name == 'array') {
                 if (!is_array($this->value)) {
-                    $this->errors[] = 'Formato campo '.$this->name.' non valido.';
+                    $this->errors[] = 'This Field '.$this->name.' invalid.';
                 }
             } else {
                 $regex = '/^('.$this->patterns[$name].')$/u';
                 if ($this->value != '' && !preg_match($regex, $this->value)) {
-                    $this->errors[] = 'Formato campo '.$this->name.' non valido.';
+                    $this->errors[] = 'This Field '.$this->name.' invalid.';
                 }
             }
             return $this;
@@ -108,7 +108,7 @@
         {
             $regex = '/^('.$pattern.')$/u';
             if ($this->value != '' && !preg_match($regex, $this->value)) {
-                $this->errors[] = 'Formato campo '.$this->name.' non valido.';
+                $this->errors[] = 'This Field '.$this->name.' invalid.';
             }
             return $this;
         }
@@ -137,11 +137,11 @@
         {
             if (is_string($this->value)) {
                 if (strlen($this->value) < $length) {
-                    $this->errors[] = 'Valore campo '.$this->name.' inferiore al valore minimo';
+                    $this->errors[] = 'Field value '.$this->name.' less than the minimum value';
                 }
             } else {
                 if ($this->value < $length) {
-                    $this->errors[] = 'Valore campo '.$this->name.' inferiore al valore minimo';
+                    $this->errors[] = 'Field value '.$this->name.' less than the minimum value';
                 }
             }
             return $this;
@@ -158,11 +158,11 @@
         {
             if (is_string($this->value)) {
                 if (strlen($this->value) > $length) {
-                    $this->errors[] = 'Valore campo '.$this->name.' superiore al valore massimo';
+                    $this->errors[] = 'Field value '.$this->name.' higher than the maximum value';
                 }
             } else {
                 if ($this->value > $length) {
-                    $this->errors[] = 'Valore campo '.$this->name.' superiore al valore massimo';
+                    $this->errors[] = 'Field value '.$this->name.' higher than the maximum value';
                 }
             }
             return $this;
@@ -178,7 +178,7 @@
         public function equal($value)
         {
             if ($this->value != $value) {
-                $this->errors[] = 'Valore campo '.$this->name.' non corrispondente.';
+                $this->errors[] = 'Field value '.$this->name.' not matching.';
             }
             return $this;
         }
@@ -192,7 +192,7 @@
         public function maxSize($size)
         {
             if ($this->file['error'] != 4 && $this->file['size'] > $size) {
-                $this->errors[] = 'Il file '.$this->name.' supera la dimensione massima di '.number_format($size / 1048576, 2).' MB.';
+                $this->errors[] = 'The file '.$this->name.' exceeds the maximum size of '.number_format($size / 1048576, 2).' MB.';
             }
             return $this;
         }
@@ -206,7 +206,7 @@
         public function ext($extension)
         {
             if ($this->file['error'] != 4 && pathinfo($this->file['name'], PATHINFO_EXTENSION) != $extension && strtoupper(pathinfo($this->file['name'], PATHINFO_EXTENSION)) != $extension) {
-                $this->errors[] = 'Il file '.$this->name.' non è un '.$extension.'.';
+                $this->errors[] = 'The file '.$this->name.' not '.$extension.'.';
             }
             return $this;
         }

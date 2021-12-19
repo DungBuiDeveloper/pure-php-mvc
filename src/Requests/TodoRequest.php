@@ -30,7 +30,7 @@ class TodoRequest extends Validation
 
     public function editValidate($data)
     {
-        $this->name('Event')->value($data['id'] ?? null)->required();
+        $this->name('Event')->value($data['id'] ?? null)->pattern('int')->required();
         if ($this->isSuccess()) {
             return true;
         } else {
