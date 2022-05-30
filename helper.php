@@ -23,7 +23,7 @@ function getUri()
  */
 function errorLog($e)
 {
-    header($_SERVER["SERVER_PROTOCOL"] . ' 500 Internal Server Error', true, 500);
+    header($_SERVER["SERVER_PROTOCOL"] . ' 500 Internal Server Error ', true, 500);
     echo '<h1>Something went wrong!</h1>';
 
     $logFilename = "../logs";
